@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
+    "@tsparticles/react": "^4.1.2",
+    "@tsparticles/slim": "^4.1.2",
     "framer-motion": "^12.40.0",
     "leaflet": "^1.9.4",
     "lucide-react": "^1.16.0",
@@ -19,10 +21,9 @@
     "react-dom": "19.2.4",
     "react-globe.gl": "^2.38.0",
     "react-leaflet": "^5.0.0",
-    "react-tsparticles": "^2.12.2",
     "recharts": "^3.8.1",
     "three": "^0.184.0",
-    "tsparticles": "^4.0.5"
+    "tsparticles": "^4.1.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

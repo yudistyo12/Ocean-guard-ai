@@ -1,12 +1,12 @@
 "use client";
 import { useCallback } from "react";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+import Particles from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
 
 export default function BackgroundEffects() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const particlesInit = useCallback(async (engine: any) => {
-    await loadFull(engine);
+    await loadSlim(engine);
   }, []);
 
   return (
