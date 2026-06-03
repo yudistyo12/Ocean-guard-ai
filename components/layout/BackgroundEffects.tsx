@@ -1,19 +1,23 @@
 "use client";
-import { useCallback } from "react";
+import { useEffect, useState } from "react";
 import Particles from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
+import { tsParticles } from "@tsparticles/engine";
 
 export default function BackgroundEffects() {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const particlesInit = useCallback(async (engine: any) => {
-    await loadSlim(engine);
+  const [init, setInit] = useState(false);
+
+  useEffect(() => {
+    loadSlim(tsParticles).then(() => {
+      setInit(true);
+    });
   }, []);
 
   return (
     <>
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
+      {init && (
+        <Particles
+          id="tsparticles"
           options={{
             background: {
               color: {
@@ -77,6 +81,7 @@ export default function BackgroundEffects() {
           }}
           className="absolute inset-0 -z-10"
         />
+      )}
 
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(0,229,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,229,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_20%,transparent_100%)] pointer-events-none" />
     </>
